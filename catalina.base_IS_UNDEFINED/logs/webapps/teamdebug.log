@@ -1,5 +1,89 @@
-2018-12-21 15:17:16.544 [main] DEBUG com.app.cn.dao.UserDao.listAll - ==>  Preparing: select * from tb_user 
-2018-12-21 15:17:16.580 [main] DEBUG com.app.cn.dao.UserDao.listAll - ==> Parameters: 
-2018-12-21 15:19:03.095 [main] DEBUG com.app.cn.dao.UserDao.listAll - ==>  Preparing: select * from tb_user 
-2018-12-21 15:19:03.142 [main] DEBUG com.app.cn.dao.UserDao.listAll - ==> Parameters: 
-2018-12-21 15:19:03.160 [main] DEBUG com.app.cn.dao.UserDao.listAll - <==      Total: 1
+2019-01-03 13:54:00.909 [main] DEBUG com.app.cn.dao.UserDao.listAll - ==>  Preparing: select * from tb_user 
+2019-01-03 13:54:00.953 [main] DEBUG com.app.cn.dao.UserDao.listAll - ==> Parameters: 
+2019-01-03 13:54:00.971 [main] DEBUG com.app.cn.dao.UserDao.listAll - <==      Total: 1
+2019-01-03 14:03:41.817 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 14:03:41.857 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 张三丰(String)
+2019-01-03 14:04:29.032 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 14:04:29.068 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 张三丰(String)
+2019-01-03 14:04:29.086 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 14:04:29.093 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 14:04:29.094 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 张无忌(String)
+2019-01-03 14:04:29.095 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 14:16:30.561 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:17:41.913 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:18:19.783 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:22:40.156 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:24:24.628 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:24:24.671 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==> Parameters: 谢逊(String), 654321(String)
+2019-01-03 14:24:24.676 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - <==    Updates: 1
+2019-01-03 14:24:25.676 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:24:25.711 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==> Parameters: 谢逊(String), 654321(String)
+2019-01-03 14:24:25.715 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - <==    Updates: 1
+2019-01-03 14:24:59.372 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 14:24:59.414 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==> Parameters: 谢逊1(String), 654321(String)
+2019-01-03 14:24:59.417 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - <==    Updates: 1
+2019-01-03 14:33:54.972 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==>  Preparing: select count(id) from tb_user where username = ? and password = ? 
+2019-01-03 14:33:55.020 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==> Parameters: 张三丰(String), 123456(String)
+2019-01-03 14:33:55.036 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - <==      Total: 1
+2019-01-03 14:35:03.146 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==>  Preparing: select count(id) from tb_user where username = ? and password = ? 
+2019-01-03 14:35:03.172 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==> Parameters: 张三丰(String), 123456(String)
+2019-01-03 14:35:03.187 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - <==      Total: 1
+2019-01-03 14:35:03.193 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==>  Preparing: select count(id) from tb_user where username = ? and password = ? 
+2019-01-03 14:35:03.193 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==> Parameters: 张三丰1(String), 123456(String)
+2019-01-03 14:35:03.194 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - <==      Total: 1
+2019-01-03 15:10:06.870 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:10:06.908 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 谢逊(String)
+2019-01-03 15:10:06.926 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:12:16.231 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:12:16.291 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 谢逊(String)
+2019-01-03 15:12:16.308 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:02.908 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:15:02.943 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 谢逊(String)
+2019-01-03 15:15:02.960 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:02.966 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:15:02.966 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 谢逊1(String)
+2019-01-03 15:15:02.967 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:02.968 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:15:02.968 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 石破天(String)
+2019-01-03 15:15:02.968 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:02.969 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 15:15:02.971 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==> Parameters: 石破天(String), 1112231(String)
+2019-01-03 15:15:02.975 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - <==    Updates: 1
+2019-01-03 15:15:48.166 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:15:48.211 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 谢逊(String)
+2019-01-03 15:15:48.227 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:48.236 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:15:48.236 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 谢逊1(String)
+2019-01-03 15:15:48.237 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:48.237 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==>  Preparing: select count(id) from tb_user where username = ? 
+2019-01-03 15:15:48.238 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - ==> Parameters: 石破天1(String)
+2019-01-03 15:15:48.239 [main] DEBUG com.app.cn.dao.UserDao.queryForOneUser - <==      Total: 1
+2019-01-03 15:15:48.239 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==>  Preparing: insert into tb_user(username,password) values (?,?) 
+2019-01-03 15:15:48.241 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - ==> Parameters: 石破天1(String), 1112231(String)
+2019-01-03 15:15:48.245 [main] DEBUG com.app.cn.dao.UserDao.insertOneUser - <==    Updates: 1
+2019-01-03 15:35:58.265 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==>  Preparing: select count(id) from tb_user where username = ? and password = ? 
+2019-01-03 15:35:58.335 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==> Parameters: 张三丰(String), 123456(String)
+2019-01-03 15:35:58.361 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - <==      Total: 1
+2019-01-03 15:35:58.370 [main] DEBUG com.app.cn.dao.UserDao.getIdByUsernameAndPassword - ==>  Preparing: select id from tb_user where username = ? and password = ? 
+2019-01-03 15:35:58.371 [main] DEBUG com.app.cn.dao.UserDao.getIdByUsernameAndPassword - ==> Parameters: 张三丰(String), 123456(String)
+2019-01-03 15:35:58.372 [main] DEBUG com.app.cn.dao.UserDao.getIdByUsernameAndPassword - <==      Total: 1
+2019-01-03 15:37:37.081 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==>  Preparing: select count(id) from tb_user where username = ? and password = ? 
+2019-01-03 15:37:37.116 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==> Parameters: 张三丰(String), 123456(String)
+2019-01-03 15:37:37.134 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - <==      Total: 1
+2019-01-03 15:37:37.141 [main] DEBUG com.app.cn.dao.UserDao.getIdByUsernameAndPassword - ==>  Preparing: select id from tb_user where username = ? and password = ? 
+2019-01-03 15:37:37.142 [main] DEBUG com.app.cn.dao.UserDao.getIdByUsernameAndPassword - ==> Parameters: 张三丰(String), 123456(String)
+2019-01-03 15:37:37.143 [main] DEBUG com.app.cn.dao.UserDao.getIdByUsernameAndPassword - <==      Total: 1
+2019-01-03 15:37:37.143 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==>  Preparing: select count(id) from tb_user where username = ? and password = ? 
+2019-01-03 15:37:37.144 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - ==> Parameters: 张三丰1(String), 123456(String)
+2019-01-03 15:37:37.144 [main] DEBUG com.app.cn.dao.UserDao.queryRegisteredUser - <==      Total: 1
+2019-01-03 18:45:33.842 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num) values (?,?,?,?) 
+2019-01-03 18:45:33.897 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 张三(String), 南京雨花台(String), 2019-01-04 18:45:33.354(Timestamp), 4(Integer)
+2019-01-03 18:48:32.480 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process) values (?,?,?,?,?) 
+2019-01-03 18:48:32.515 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 张三(String), 南京雨花台(String), 2019-01-04 18:48:32.093(Timestamp), 4(Integer), 0(Integer)
+2019-01-03 18:48:32.520 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
+2019-01-03 18:50:36.886 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process) values (?,?,?,?,?) 
+2019-01-03 18:50:36.926 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 测试1(String), 南京雨花台(String), 2019-01-04 18:50:36.51(Timestamp), 4(Integer), 0(Integer)
+2019-01-03 18:50:36.929 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
+2019-01-03 18:58:55.614 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process) values (?,?,?,?,?) 
+2019-01-03 18:58:55.658 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 测试2(String), 南京雨花台(String), 2019-01-04 18:58:55.173(Timestamp), 4(Integer), 0(Integer)
+2019-01-03 18:58:55.661 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1

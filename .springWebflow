@@ -3,9 +3,5 @@
 	<version>1</version>
 	<pluginVersion><![CDATA[3.9.2.201712210913-RELEASE]]></pluginVersion>
 	<configs>
-		<config>
-			<file>src/main/resources/mapper/UserDao.xml</file>
-			<name><![CDATA[UserDao]]></name>
-		</config>
 	</configs>
 </webflow-project-description>
