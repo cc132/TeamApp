@@ -9,6 +9,21 @@ public class TravelInfo {
 	private Date startTime;
 	private Integer peopleNum;
 	private Integer process;//0代表进行中的活动，1代表已经结束的活动
+	private String descInfo;
+	private Date releaseTime;
+	
+	public String getDescInfo() {
+		return descInfo;
+	}
+	public void setDescInfo(String descInfo) {
+		this.descInfo = descInfo;
+	}
+	public Date getReleaseTime() {
+		return releaseTime;
+	}
+	public void setReleaseTime(Date releaseTime) {
+		this.releaseTime = releaseTime;
+	}
 	public Integer getProcess() {
 		return process;
 	}

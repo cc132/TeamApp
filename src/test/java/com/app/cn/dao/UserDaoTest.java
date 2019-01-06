@@ -31,10 +31,9 @@ public class UserDaoTest extends BaseTest{
 	}
 	
 	@Test
-	@Ignore
 	public void testInsertOneUser() throws Exception {
 		User user = new User();
-		user.setUsername("谢逊1");
+		user.setUsername("测试");
 		user.setPassword("654321");
 		userDao.insertOneUser(user);
 		System.out.println(user.getId());

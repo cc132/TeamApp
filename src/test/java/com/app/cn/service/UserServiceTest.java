@@ -23,7 +23,7 @@ public class UserServiceTest extends BaseTest{
 		user.setUsername("谢逊1");
 		addUser = userDaoService.addUser(user);
 		assertEquals("no",addUser.getSuccess());
-		user.setUsername("石破天1");
+		user.setUsername("石破天2");
 		addUser = userDaoService.addUser(user);
 		assertEquals("yes",addUser.getSuccess());
 		System.out.println(addUser.getUser().getId());

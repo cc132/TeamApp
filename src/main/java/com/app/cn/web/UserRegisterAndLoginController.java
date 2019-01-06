@@ -28,6 +28,7 @@ public class UserRegisterAndLoginController {
 	@RequestMapping(value="/user/login",method=RequestMethod.POST)
 	@ResponseBody
 	public UserDto loginUser(String username,String password) {
+		System.out.println("order arrival..............");
 		User user = new User();
 		user.setUsername(username);
 		user.setPassword(password);

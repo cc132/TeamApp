@@ -6,7 +6,7 @@
 	<insert id="addTravelInfo" useGeneratedKeys="true"
 		keyColumn="id" keyProperty="id">
 		insert into
-		tb_travel_info(username,to_where,start_time,people_num,process) values
-		(#{username},#{toWhere},#{startTime},#{peopleNum},#{process})
+		tb_travel_info(username,to_where,start_time,people_num,process,release_time) values
+		(#{username},#{toWhere},#{startTime},#{peopleNum},#{process},#{releaseTime})
 	</insert>
 </mapper>

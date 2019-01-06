@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.app.cn.entity.User;
@@ -16,10 +17,11 @@ import com.app.cn.entity.User;
 public class HelloController {
 	private Logger logger = LoggerFactory.getLogger(HelloController.class);
 	
-	@RequestMapping(value="hello",method=RequestMethod.POST)
+	@RequestMapping(value="/hello",method=RequestMethod.POST)
 	@ResponseBody
-	public Map<String,Object> demoController(String username,String password) {
+	public Map<String,Object> demoController(@RequestParam("account")Integer username,@RequestParam("password")String password) {
 		Map<String,Object> modelMap = new HashMap<>();
+		System.out.println("Integer:" +username);
 		logger.debug("=====start=====");
 		try {
 			//具体业务编写

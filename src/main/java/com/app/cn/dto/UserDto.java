@@ -3,7 +3,7 @@ package com.app.cn.dto;
 import com.app.cn.entity.User;
 
 public class UserDto {
-	//no:此次操作失败;yes:此次操作成功
+	//no:此次操作失败;ok:此次操作成功
 	private String success;
 	
 	private String errMsg;

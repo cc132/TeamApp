@@ -17,7 +17,7 @@ public class TravelInfoDaoTest extends BaseTest {
 	@Test
 	public void testAddTravelInfo() throws Exception {
 		TravelInfo info = new TravelInfo();
-		info.setUsername("测试2");
+		info.setUsername("测试3");
 		info.setToWhere("南京雨花台");
 		Date date = new Date();// 取时间
 		Calendar calendar = new GregorianCalendar();
@@ -27,6 +27,7 @@ public class TravelInfoDaoTest extends BaseTest {
 		info.setStartTime(date);
 		info.setPeopleNum(4);
 		info.setProcess(0);
+		info.setReleaseTime(new Date());
 		dao.addTravelInfo(info);
 		System.out.println(info.getId());
 	}
