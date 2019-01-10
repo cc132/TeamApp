@@ -1,9 +1,3 @@
-2019-01-06 19:20:15.756 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process,release_time) values (?,?,?,?,?,?) 
-2019-01-06 19:20:15.805 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 测试3(String), 南京雨花台(String), 2019-01-07 19:20:15.314(Timestamp), 4(Integer), 0(Integer), 2019-01-06 19:20:15.314(Timestamp)
-2019-01-06 19:20:15.808 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
-2019-01-06 19:43:35.971 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process,release_time) values (?,?,?,?,?,?) 
-2019-01-06 19:43:36.013 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 测试4(String), 南京雨花台(String), 2019-01-08 19:43:35.542(Timestamp), 4(Integer), 0(Integer), 2019-01-06 19:43:35.542(Timestamp)
-2019-01-06 19:43:36.017 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
-2019-01-06 19:45:21.742 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process,release_time) values (?,?,?,?,?,?) 
-2019-01-06 19:45:21.793 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 测试5(String), 南京雨花台(String), 2019-01-08 19:45:21.339(Timestamp), 4(Integer), 0(Integer), 2019-01-06 19:45:21.339(Timestamp)
-2019-01-06 19:45:21.811 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
+2019-01-08 19:15:05.173 [main] DEBUG c.a.c.d.P.addPredefinedTravelInfo - ==>  Preparing: insert into tb_predefined_travel_info(username,activity_name,area,specific_location) values(?,?,?,?) 
+2019-01-08 19:15:05.235 [main] DEBUG c.a.c.d.P.addPredefinedTravelInfo - ==> Parameters: 测试人员1(String), 测试预定活动1(String), 测试区域1(String), 测试具体区域1(String)
+2019-01-08 19:15:05.239 [main] DEBUG c.a.c.d.P.addPredefinedTravelInfo - <==    Updates: 1

@@ -9,7 +9,7 @@ $(function (){
         $.ajax({
             type:'POST',
             data: json,
-            url:'hello',
+            url:'/TeamApp/hello',
             dataType:'json',//返回数据格式
             success:function (data){
                 console.log(data);//值为success
