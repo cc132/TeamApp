@@ -36,4 +36,9 @@ public class PredefinedTravelInfo {
 	public void setSpecificLocation(String specificLocation) {
 		this.specificLocation = specificLocation;
 	}
+	@Override
+	public String toString() {
+		return "PredefinedTravelInfo [id=" + id + ", username=" + username + ", activityName=" + activityName
+				+ ", area=" + area + ", specificLocation=" + specificLocation + "]";
+	}
 }

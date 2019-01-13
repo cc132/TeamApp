@@ -9,4 +9,16 @@
 		tb_predefined_travel_info(username,activity_name,area,specific_location)
 		values(#{username},#{activityName},#{area},#{specificLocation})
 	</insert>
+	<select id="queryPredefinedTravelInfos"
+		resultType="com.app.cn.entity.PredefinedTravelInfo">
+		select * from tb_predefined_travel_info where username =
+		#{username}
+	</select>
+	<update id="updatePredefinedTravelInfo">
+		update tb_predefined_travel_info set activity_name =
+		#{activityName},area = #{area},specific_location = #{specificLocation} where id = #{id} and username = #{username}
+	</update>
+	<delete id="deletePredefinedTravelInfo">
+		delete from tb_predefined_travel_info where id = #{id}
+	</delete>
 </mapper>

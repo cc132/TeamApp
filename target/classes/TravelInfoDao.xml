@@ -6,7 +6,48 @@
 	<insert id="addTravelInfo" useGeneratedKeys="true"
 		keyColumn="id" keyProperty="id">
 		insert into
-		tb_travel_info(username,to_where,start_time,people_num,process,release_time) values
-		(#{username},#{toWhere},#{startTime},#{peopleNum},#{process},#{releaseTime})
+		tb_travel_info(username,to_where,start_time,people_num,process,desc_info,release_time,username_id)
+		values
+		(#{username},#{toWhere},#{startTime},#{peopleNum},#{process},#{descInfo},#{releaseTime},#{usernameId})
 	</insert>
+	<select id="showAllExecutingTravelInfo"
+		resultType="com.app.cn.entity.TravelInfo">
+		select * from tb_travel_info where process = 0
+	</select>
+	<select id="showOwnTravelInfo"
+		resultType="com.app.cn.entity.TravelInfo">
+		select * from tb_travel_info where username = #{username}
+	</select>
+	<insert id="applyForOneActivity" useGeneratedKeys="true"
+		keyColumn="id" keyProperty="id">
+		insert into
+		tb_team(leader_username,leader_id,member_username,member_id,activity_id,process,flag)
+		values
+		(#{leaderUsername},#{leaderId},#{memberUsername},#{memberId},#{activityId},#{process},#{flag})
+	</insert>
+	<select id="checkTeamCondition"
+		resultType="com.app.cn.entity.TeamInfo">
+		select * from tb_team where leader_username =
+		#{leaderUsername} and leader_id = #{leaderId} and activity_id =
+		#{activityId}
+	</select>
+	<delete id="deleteSomeApplication">
+		delete from tb_team where activity_id =#{activityId}
+		and member_username = #{memberUsername} and member_id = #{memberId}
+		and leader_username = #{leaderUsername}
+	</delete>
+	<update id="endApplication">
+		update tb_team set process = 1 where leader_username
+		= #{leaderUsername} and leader_id = #{leaderId} and activity_id =
+		#{activityId}
+	</update>
+	<update id="changeTravelInfoProcess">
+		update tb_travel_info set process = 1 where username
+		= #{username} and username_id = #{username_id} and id = #{id}
+	</update>
+	<select id="getFinalTeamInfo"
+		resultType="com.app.cn.entity.TeamInfo">
+		select * from tb_team where leader_username =
+		#{leaderUsername} and leader_id = #{leaderId} and activity_id = #{activityId} and process = 1
+	</select>
 </mapper>

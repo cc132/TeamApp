@@ -15,7 +15,7 @@ public class UserServiceTest extends BaseTest{
 	
 	@Test
 	public void testAddUser() throws Exception {
-		User user = new User();
+	/*	User user = new User();
 		user.setUsername("谢逊");
 		user.setPassword("1112231");
 		UserDto addUser = userDaoService.addUser(user);
@@ -26,7 +26,12 @@ public class UserServiceTest extends BaseTest{
 		user.setUsername("石破天2");
 		addUser = userDaoService.addUser(user);
 		assertEquals("yes",addUser.getSuccess());
-		System.out.println(addUser.getUser().getId());
+		System.out.println(addUser.getUser().getId());*/
+		//测试事务回滚是否成功
+		User user1 = new User();
+		user1.setUsername("测试事务2");
+		user1.setPassword("1234567");
+		userDaoService.addUser(user1);
 	}
 	
 	@Test

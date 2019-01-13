@@ -37,5 +37,10 @@ public class PersonInfo {
 	public void setSchoolArea(String schoolArea) {
 		this.schoolArea = schoolArea;
 	}
+	@Override
+	public String toString() {
+		return "PersonInfo [id=" + id + ", username=" + username + ", age=" + age + ", gender=" + gender
+				+ ", schoolArea=" + schoolArea + "]";
+	}
 	
 }

@@ -40,7 +40,6 @@ public class UserRegisterAndLoginController {
 	@RequestMapping(value="/user/login",method=RequestMethod.POST)
 	@ResponseBody
 	public UserDto loginUser(String username,String password) {
-		System.out.println(username);
 		Object[] params = {username,password};
 		ResultDto<Object> result = CommonsUtil.getDecoderResult(params);
 		if("no".equals(result.getSuccess())) {
@@ -51,7 +50,6 @@ public class UserRegisterAndLoginController {
 		}
 		User user = new User();
 		user.setUsername((String)params[0]);
-		System.out.println("转化后"+(String)params[0]);
 		user.setPassword((String)params[1]);
 		UserDto addUser = service.queryOneUser(user);
 		return addUser;

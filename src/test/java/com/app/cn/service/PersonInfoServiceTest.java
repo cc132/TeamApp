@@ -24,4 +24,17 @@ public class PersonInfoServiceTest extends BaseTest{
 		assertEquals("ok",addPersonInfo.getSuccess());
 		System.out.println(addPersonInfo.getResult().getId());
 	}
+	
+	@Test
+	public void testUpdatePersonInfo() throws Exception {
+		PersonInfo info = new PersonInfo();
+		info.setUsername("测试事务2");
+		info.setAge(20);
+		service.updatePersonInfo(info);
+	}
+	
+	@Test
+	public void testQueryPersonInfo() throws Exception {
+		System.out.println(service.queryPersonInfo("测试事务2").getResult().toString());
+	}
 }

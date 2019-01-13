@@ -2,9 +2,12 @@ package com.app.cn.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+import com.app.cn.dao.PersonInfoDao;
 import com.app.cn.dao.UserDao;
 import com.app.cn.dto.UserDto;
+import com.app.cn.entity.PersonInfo;
 import com.app.cn.entity.User;
 import com.app.cn.service.UserDaoService;
 
@@ -12,8 +15,11 @@ import com.app.cn.service.UserDaoService;
 public class UserDaoServiceImpl implements UserDaoService {
 	@Autowired
 	private UserDao userDao;
+	@Autowired
+	private PersonInfoDao personInfoDao;
 	
 	@Override
+	@Transactional
 	//用户注册
 	public UserDto addUser(User user) {
 		UserDto dto = new UserDto();
@@ -26,9 +32,17 @@ public class UserDaoServiceImpl implements UserDaoService {
 			return dto;
 		}
 		//用户注册时用户名不冲突则正常执行
-		userDao.insertOneUser(user);
-		dto.setSuccess("yes");
-		dto.setUser(user);
+		try {
+			userDao.insertOneUser(user);
+			PersonInfo initialInfo = new PersonInfo();
+			initialInfo.setUsername(username);
+			personInfoDao.addPersonInfo(initialInfo);
+			dto.setSuccess("ok");
+			dto.setUser(user);
+		}catch(Exception e) {
+			dto.setSuccess("no");
+			dto.setErrMsg(e.toString());
+		}
 		return dto;
 	}
 
@@ -45,7 +59,7 @@ public class UserDaoServiceImpl implements UserDaoService {
 		}
 		int id = userDao.getIdByUsernameAndPassword(user);
 		user.setId(id);
-		dto.setSuccess("yes");
+		dto.setSuccess("ok");
 		dto.setUser(user);
 		return dto;
 	}

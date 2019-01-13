@@ -2,6 +2,7 @@ package com.app.cn.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.app.cn.dao.PersonInfoDao;
 import com.app.cn.dto.ResultDto;
@@ -25,6 +26,35 @@ public class PersonInfoServiceImpl implements PersonInfoService{
 		dto = new ResultDto<>();
 		dto.setSuccess("ok");
 		dto.setResult(info);
+		return dto;
+	}
+
+	@Override
+	@Transactional
+	public ResultDto<PersonInfo> updatePersonInfo(PersonInfo info) {
+		ResultDto<PersonInfo> dto = new ResultDto<>();
+		try {
+			dao.updatePersonInfo(info);
+			dto.setSuccess("ok");
+			dto.setResult(info);
+		}catch(Exception e) {
+			dto.setSuccess("no");
+			dto.setErrMsg(e.toString());
+		}
+		return dto;
+	}
+
+	@Override
+	public ResultDto<PersonInfo> queryPersonInfo(String username) {
+		ResultDto<PersonInfo> dto = new ResultDto<>();
+		try {
+			PersonInfo info = dao.queryPersonInfo(username);
+			dto.setSuccess("ok");
+			dto.setResult(info);
+		}catch(Exception e) {
+			dto.setSuccess("no");
+			dto.setErrMsg(e.toString());
+		}
 		return dto;
 	}
 

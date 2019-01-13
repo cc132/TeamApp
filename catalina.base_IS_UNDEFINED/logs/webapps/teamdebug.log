@@ -1,3 +1,36 @@
-2019-01-08 19:15:05.173 [main] DEBUG c.a.c.d.P.addPredefinedTravelInfo - ==>  Preparing: insert into tb_predefined_travel_info(username,activity_name,area,specific_location) values(?,?,?,?) 
-2019-01-08 19:15:05.235 [main] DEBUG c.a.c.d.P.addPredefinedTravelInfo - ==> Parameters: 测试人员1(String), 测试预定活动1(String), 测试区域1(String), 测试具体区域1(String)
-2019-01-08 19:15:05.239 [main] DEBUG c.a.c.d.P.addPredefinedTravelInfo - <==    Updates: 1
+2019-01-13 13:35:35.301 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process,desc_info,release_time,username_id) values (?,?,?,?,?,?,?,?) 
+2019-01-13 13:35:35.372 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 新的测试(String), 南京新街口(String), 2019-01-15 13:35:34(String), 4(Integer), 0(Integer), null, 2019-01-13 13:35:34(String), null
+2019-01-13 13:35:35.376 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
+2019-01-13 13:35:35.382 [main] DEBUG com.app.cn.dao.TravelInfoDao.applyForOneActivity - ==>  Preparing: insert into tb_team(leader_username,leader_id,member_username,member_id,activity_id,process,flag) values (?,?,?,?,?,?,?) 
+2019-01-13 13:35:35.384 [main] DEBUG com.app.cn.dao.TravelInfoDao.applyForOneActivity - ==> Parameters: 新的测试(String), null, 新的测试(String), null, 13(Integer), 0(Integer), 0(Integer)
+2019-01-13 13:35:35.387 [main] DEBUG com.app.cn.dao.TravelInfoDao.applyForOneActivity - <==    Updates: 1
+2019-01-13 13:36:33.655 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==>  Preparing: insert into tb_travel_info(username,to_where,start_time,people_num,process,desc_info,release_time,username_id) values (?,?,?,?,?,?,?,?) 
+2019-01-13 13:36:33.714 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - ==> Parameters: 新的测试2(String), 南京新街口(String), 2019-01-15 13:36:33(String), 4(Integer), 0(Integer), null, 2019-01-13 13:36:33(String), 88(Integer)
+2019-01-13 13:36:33.718 [main] DEBUG com.app.cn.dao.TravelInfoDao.addTravelInfo - <==    Updates: 1
+2019-01-13 13:36:33.726 [main] DEBUG com.app.cn.dao.TravelInfoDao.applyForOneActivity - ==>  Preparing: insert into tb_team(leader_username,leader_id,member_username,member_id,activity_id,process,flag) values (?,?,?,?,?,?,?) 
+2019-01-13 13:36:33.727 [main] DEBUG com.app.cn.dao.TravelInfoDao.applyForOneActivity - ==> Parameters: 新的测试2(String), 88(Integer), 新的测试2(String), 88(Integer), 14(Integer), 0(Integer), 0(Integer)
+2019-01-13 13:36:33.730 [main] DEBUG com.app.cn.dao.TravelInfoDao.applyForOneActivity - <==    Updates: 1
+2019-01-13 13:58:55.720 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - ==>  Preparing: update tb_team set process = 1 where leader_username = ? and leader_id = ? and activity_id = ? 
+2019-01-13 13:58:55.782 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 13:58:55.786 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - <==    Updates: 5
+2019-01-13 13:58:55.789 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - ==>  Preparing: update tb_travel_info set process = 1 where username = ? and username_id = ? and id = ? 
+2019-01-13 13:58:55.790 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 13:58:55.793 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - <==    Updates: 1
+2019-01-13 14:01:11.365 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - ==>  Preparing: update tb_team set process = 1 where leader_username = ? and leader_id = ? and activity_id = ? 
+2019-01-13 14:01:11.425 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 14:01:11.428 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - <==    Updates: 5
+2019-01-13 14:01:11.431 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - ==>  Preparing: update tb_travel_info set process = 1 where username = ? and username_id = ? and id = ? 
+2019-01-13 14:01:11.432 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 14:01:11.436 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - <==    Updates: 1
+2019-01-13 14:03:25.133 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - ==>  Preparing: update tb_team set process = 1 where leader_username = ? and leader_id = ? and activity_id = ? 
+2019-01-13 14:03:25.205 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 14:03:25.209 [main] DEBUG com.app.cn.dao.TravelInfoDao.endApplication - <==    Updates: 5
+2019-01-13 14:03:25.211 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - ==>  Preparing: update tb_travel_info set process = 1 where username = ? and username_id = ? and id = ? 
+2019-01-13 14:03:25.211 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 14:03:25.215 [main] DEBUG c.app.cn.dao.TravelInfoDao.changeTravelInfoProcess - <==    Updates: 1
+2019-01-13 14:15:21.390 [main] DEBUG com.app.cn.dao.TravelInfoDao.getFinalTeamInfo - ==>  Preparing: select * from tb_team where leader_username = ? and leader_id = ? and activity_id = ? and process = 1 
+2019-01-13 14:15:21.447 [main] DEBUG com.app.cn.dao.TravelInfoDao.getFinalTeamInfo - ==> Parameters: 张三(String), 1(Integer), 1(Integer)
+2019-01-13 14:15:21.468 [main] DEBUG com.app.cn.dao.TravelInfoDao.getFinalTeamInfo - <==      Total: 5
+2019-01-13 14:46:32.381 [main] DEBUG com.app.cn.dao.CommentDao.discussionBeforeTravel - ==>  Preparing: insert into tb_comment (user_id,username,activity_id,words,video_path,img_path) values (?,?,?,?,?,?) 
+2019-01-13 14:46:32.448 [main] DEBUG com.app.cn.dao.CommentDao.discussionBeforeTravel - ==> Parameters: 1(Integer), 张三(String), 1(Integer), hello 各位小伙伴(String), null, null
+2019-01-13 14:46:32.452 [main] DEBUG com.app.cn.dao.CommentDao.discussionBeforeTravel - <==    Updates: 1

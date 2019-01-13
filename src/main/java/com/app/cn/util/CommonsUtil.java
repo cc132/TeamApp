@@ -8,7 +8,10 @@ import java.util.Date;
 import com.app.cn.dto.ResultDto;
 
 public class CommonsUtil {
-	
+	public static String Date2String(Date date) {
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		return sdf.format(date);
+	}
 	public static Date String2Date(String time) {
 		Date date = null;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
