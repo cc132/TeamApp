@@ -14,6 +14,7 @@ import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import com.app.cn.dto.ResultDto;
 import com.app.cn.entity.DiscussionBeforeTravel;
 import com.app.cn.service.CommentService;
+import com.app.cn.util.CommonsUtil;
 import com.app.cn.util.PathUtil;
 
 @Controller
@@ -25,6 +26,14 @@ public class CommentController {
 	@ResponseBody
 	public ResultDto<DiscussionBeforeTravel> commentBeforeTravel(Integer userId, String userName, Integer activityId,
 			@RequestParam(value = "file") CommonsMultipartFile file) {
+		Object[] params = {userName};
+		ResultDto<Object> result2 = CommonsUtil.getDecoderResult(params);
+		if("no".equals(result2.getSuccess())) {
+			ResultDto<DiscussionBeforeTravel> dto = new ResultDto<>();
+			dto.setSuccess("no");
+			dto.setErrMsg(result2.getErrMsg());
+			return dto;
+		}
 		DiscussionBeforeTravel info = new DiscussionBeforeTravel();
 		ResultDto<DiscussionBeforeTravel> result = new ResultDto<>();
 		info.setUserId(userId);
@@ -64,8 +73,15 @@ public class CommentController {
 
 	@RequestMapping(value = "/user/commentbywordbeforetravel", method = RequestMethod.POST)
 	@ResponseBody
-	public ResultDto<DiscussionBeforeTravel> commentBeforeTravel(Integer userId, String userName, Integer activityId,
-			String words) {
+	public ResultDto<DiscussionBeforeTravel> commentBeforeTravel(Integer userId, String userName, Integer activityId,String words) {
+		Object[] params = {userName,words};
+		ResultDto<Object> result2 = CommonsUtil.getDecoderResult(params);
+		if("no".equals(result2.getSuccess())) {
+			ResultDto<DiscussionBeforeTravel> dto = new ResultDto<>();
+			dto.setSuccess("no");
+			dto.setErrMsg(result2.getErrMsg());
+			return dto;
+		}
 		DiscussionBeforeTravel info = new DiscussionBeforeTravel();
 		ResultDto<DiscussionBeforeTravel> result = new ResultDto<>();
 		info.setUserId(userId);

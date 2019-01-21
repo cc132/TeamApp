@@ -77,7 +77,7 @@ public class PredefinedTravelInfoController {
 			dto.setErrMsg(result.getErrMsg());
 			return dto;
 		}
-		ResultDto<List<PredefinedTravelInfo>> result1 = service.queryPredefinedTravelInfos(username);
+		ResultDto<List<PredefinedTravelInfo>> result1 = service.queryPredefinedTravelInfos((String)params[0]);
 		return result1;
 	}
 }
