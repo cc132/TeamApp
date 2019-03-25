@@ -87,6 +87,14 @@ public class TravelInfoDaoTest extends BaseTest {
 	}
 	
 	@Test
+	public void testAcceptOneApplication() throws Exception {
+		int effectedRow = dao.acceptOneApplication("张三", 1, "张2", 12);
+		assertEquals(1,effectedRow);
+		effectedRow = dao.refuseOneApplication("张三", 1, "张2", 12);
+		assertEquals(1,effectedRow);
+	}
+	
+	@Test
 	public void EndApplication() throws Exception {
 		dao.endApplication("张三", 1, 1);
 		dao.changeTravelInfoProcess("张三", 1,1);

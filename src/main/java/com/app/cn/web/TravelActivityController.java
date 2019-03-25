@@ -134,4 +134,32 @@ public class TravelActivityController {
 		ResultDto<List<TeamInfo>> result1 = service.endApplication(leaderUsername, leaderId, activityId);
 		return result1;
 	}
+	@RequestMapping(value="/user/acceptsomeapplication",method=RequestMethod.POST)
+	@ResponseBody
+	public ResultDto<Object> acceptSomeApplication(String leaderUsername,Integer activityId,String memberUsername,Integer memberId){
+		Object[] params = {memberUsername,leaderUsername};
+		ResultDto<Object> result = CommonsUtil.getDecoderResult(params);
+		if("no".equals(result.getSuccess())) {
+			ResultDto<Object> dto = new ResultDto<>();
+			dto.setSuccess("no");
+			dto.setErrMsg(result.getErrMsg());
+			return dto;
+		}
+		ResultDto<Object> result1 = service.acceptSomeApplication((String)params[1],activityId,(String)params[0], memberId);
+		return result1;
+	}
+	@RequestMapping(value="/user/refusesomeapplication",method=RequestMethod.POST)
+	@ResponseBody
+	public ResultDto<Object> refuseSomeApplication(String leaderUsername,Integer activityId,String memberUsername,Integer memberId){
+		Object[] params = {memberUsername,leaderUsername};
+		ResultDto<Object> result = CommonsUtil.getDecoderResult(params);
+		if("no".equals(result.getSuccess())) {
+			ResultDto<Object> dto = new ResultDto<>();
+			dto.setSuccess("no");
+			dto.setErrMsg(result.getErrMsg());
+			return dto;
+		}
+		ResultDto<Object> result1 = service.refuseSomeApplication((String)params[1],activityId,(String)params[0], memberId);
+		return result1;
+	}
 }

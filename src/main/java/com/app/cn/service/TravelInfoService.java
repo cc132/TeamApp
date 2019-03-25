@@ -26,7 +26,10 @@ public interface TravelInfoService {
 	
 	//作为活动的发起人，可以删除一些入队请求
 	ResultDto<Object> deleteSomeApplication(String leaderUsername,Integer activityId,String memberUsername,Integer memberId);
-	
+	//作为活动的发起人，接受某些入队请求
+	ResultDto<Object> acceptSomeApplication(String leaderUsername,Integer activityId,String memberUsername,Integer memberId);
+	//作为活动的发起人，拒绝谋学入队请求
+	ResultDto<Object> refuseSomeApplication(String leaderUsername,Integer activityId,String memberUsername,Integer memberId);
 	//作为活动的发起人，可以确定招募队员何时结束
 	ResultDto<List<TeamInfo>> endApplication(String leaderUsername,Integer leaderId,Integer activityId);
 	ResultDto<List<TeamInfo>> getFinalTeamInfo(String leaderUsername,Integer leaderId,Integer activityId);

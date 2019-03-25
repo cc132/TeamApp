@@ -48,6 +48,22 @@
 	<select id="getFinalTeamInfo"
 		resultType="com.app.cn.entity.TeamInfo">
 		select * from tb_team where leader_username =
-		#{leaderUsername} and leader_id = #{leaderId} and activity_id = #{activityId} and process = 1
+		#{leaderUsername} and leader_id = #{leaderId} and activity_id =
+		#{activityId} and process = 1
 	</select>
+	<update id="refuseOneApplication">
+		update tb_team set process = -1 where activity_id
+		=#{activityId}
+		and member_username = #{memberUsername} and member_id =
+		#{memberId}
+		and leader_username = #{leaderUsername}
+	</update>
+	<update id="acceptOneApplication">
+		update tb_team set process = 1 where activity_id
+		=#{activityId}
+		and
+		member_username = #{memberUsername} and member_id = #{memberId}
+		and
+		leader_username = #{leaderUsername}
+	</update>
 </mapper>

@@ -30,4 +30,9 @@ public interface TravelInfoDao {
 	void endApplication(@Param("leaderUsername")String leaderUsername,@Param("leaderId")Integer leaderId,@Param("activityId")Integer activityId);
 	void changeTravelInfoProcess(@Param("username")String username,@Param("username_id")Integer username_Id,@Param("id") Integer id);
 	List<TeamInfo> getFinalTeamInfo(@Param("leaderUsername")String leaderUsername,@Param("leaderId")Integer leaderId,@Param("activityId")Integer activityId);
+	
+	//活动发起人拒绝队员的入队申请
+	int refuseOneApplication(@Param("leaderUsername")String leaderUsername,@Param("activityId") Integer activityId,@Param("memberUsername")String memberUsername,@Param("memberId")Integer memberId);
+	//活动发起人接受队员的入队申请
+	int acceptOneApplication(@Param("leaderUsername")String leaderUsername,@Param("activityId") Integer activityId,@Param("memberUsername")String memberUsername,@Param("memberId")Integer memberId);
 }

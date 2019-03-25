@@ -11,11 +11,12 @@ import com.app.cn.dto.TravelInfoDto;
 import com.app.cn.entity.TeamInfo;
 import com.app.cn.entity.TravelInfo;
 import com.app.cn.service.TravelInfoService;
+
 @Service
-public class TravelInfoServiceImpl implements TravelInfoService{
+public class TravelInfoServiceImpl implements TravelInfoService {
 	@Autowired
 	private TravelInfoDao dao;
-	
+
 	public TravelInfoDto addTravelInfo(TravelInfo info) {
 		dao.addTravelInfo(info);
 		TravelInfoDto dto = new TravelInfoDto();
@@ -43,7 +44,7 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 			List<TravelInfo> showAllExecutingTravelInfo = dao.showAllExecutingTravelInfo();
 			infos.setSuccess("ok");
 			infos.setResult(showAllExecutingTravelInfo);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			infos.setSuccess("no");
 			infos.setErrMsg(e.toString());
 		}
@@ -57,7 +58,7 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 			List<TravelInfo> showOwnTravelInfo = dao.showOwnTravelInfo(username);
 			infos.setSuccess("ok");
 			infos.setResult(showOwnTravelInfo);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			infos.setSuccess("no");
 			infos.setErrMsg(e.toString());
 		}
@@ -70,7 +71,7 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 		try {
 			dao.applyForOneActivity(info);
 			result.setSuccess("ok");
-		}catch(Exception e) {
+		} catch (Exception e) {
 			result.setSuccess("no");
 			result.setErrMsg(e.toString());
 		}
@@ -84,7 +85,7 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 			List<TeamInfo> result = dao.checkTeamCondition(leaderUsername, leaderId, activityId);
 			infos.setSuccess("ok");
 			infos.setResult(result);
-		}catch(Exception e) {
+		} catch (Exception e) {
 			infos.setSuccess("no");
 			infos.setErrMsg(e.toString());
 		}
@@ -92,12 +93,13 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 	}
 
 	@Override
-	public ResultDto<Object> deleteSomeApplication(String leaderUsername,Integer activityId, String memberUsername, Integer memberId) {
+	public ResultDto<Object> deleteSomeApplication(String leaderUsername, Integer activityId, String memberUsername,
+			Integer memberId) {
 		ResultDto<Object> infos = new ResultDto<>();
 		try {
-			dao.deleteSomeApplication(leaderUsername,activityId, memberUsername, memberId);
+			dao.deleteSomeApplication(leaderUsername, activityId, memberUsername, memberId);
 			infos.setSuccess("ok");
-		}catch(Exception e) {
+		} catch (Exception e) {
 			infos.setSuccess("no");
 			infos.setErrMsg(e.toString());
 		}
@@ -113,7 +115,7 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 			ResultDto<List<TeamInfo>> finalTeamInfo = getFinalTeamInfo(leaderUsername, leaderId, activityId);
 			infos.setSuccess("ok");
 			infos.setResult(finalTeamInfo.getResult());
-		}catch(Exception e) {
+		} catch (Exception e) {
 			infos.setSuccess("no");
 			infos.setErrMsg(e.toString());
 		}
@@ -127,5 +129,33 @@ public class TravelInfoServiceImpl implements TravelInfoService{
 		res.setResult(infos);
 		res.setSuccess("ok");
 		return res;
+	}
+
+	@Override
+	public ResultDto<Object> acceptSomeApplication(String leaderUsername, Integer activityId, String memberUsername,
+			Integer memberId) {
+		ResultDto<Object> infos = new ResultDto<>();
+		try {
+			dao.acceptOneApplication(leaderUsername, activityId, memberUsername, memberId);
+			infos.setSuccess("ok");
+		} catch (Exception e) {
+			infos.setSuccess("no");
+			infos.setErrMsg(e.toString());
+		}
+		return infos;
+	}
+
+	@Override
+	public ResultDto<Object> refuseSomeApplication(String leaderUsername, Integer activityId, String memberUsername,
+			Integer memberId) {
+		ResultDto<Object> infos = new ResultDto<>();
+		try {
+			dao.refuseOneApplication(leaderUsername, activityId, memberUsername, memberId);
+			infos.setSuccess("ok");
+		} catch (Exception e) {
+			infos.setSuccess("no");
+			infos.setErrMsg(e.toString());
+		}
+		return infos;
 	}
 }
